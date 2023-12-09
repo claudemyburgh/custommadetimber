@@ -1,0 +1,47 @@
+@use "~macaroon.css/sass/mixins"
+$colors: (primary: (DEFAULT: #60b5ba, 100: #c5e7ea, 200: #8acbd0, 300: #7bc9ce), secondary: (DEFAULT: #dee0de))
+
+\:root
+
+  +mixins.color-loop($colors)
+  // Fonts heading
+  --heading-fonts: 'Rubik', sans-serif
+  --heading-font-weight: 700
+  --heading-color: #444
+
+  --body-font-family:  'Roboto', sans-serif
+  --body-font-size: 1rem
+  --body-font-weight: 400
+  --body-color: #fff
+  --body-selection-bg: var(--primary-100)
+  --body-selection-txt: var(--primary)
+
+  // Global body styles
+  --body-margin-top: 0
+  --body-bg-color: #fbfafa
+  --body-line-height: 1.48
+  // Main navigation
+  --nav-bg-color: var(--black)
+  --nav-brand-color: #fff
+  --nav-brand-size: 22px
+  --nav-breakpoint: 900px
+  --nav-height: 70px
+  --nav-padding: 0
+  // Navigation Links
+  --nav-link-border-radius: 0
+  --nav-link-bg: transparent
+  --nav-link-txt: var(--white)
+  --nav-link-bg-hover: var(--white)
+  --nav-link-txt-hover: var(--black)
+  --nav-link-height: var(--nav-height)
+  // Navigation toggle
+  --nav-toggle-border-style: solid 5px var(--ceruran-100)
+  --nav-toggle-radius: 4px
+
+
+  // Panel
+  --panel-bg-color: #fff
+  --panel-color: #444
+  --panel-padding: 12px
+
+

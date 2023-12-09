@@ -1,113 +1,214 @@
-import Image from 'next/image'
+import React from "react"
+import Hero from "@/components/Sections/Hero"
+import Section from "@/components/Sections/Section"
+import Button from "@/components/UiElements/Button"
+import Tilt from "@/components/UiElements/Tilt"
+import home from "@/assets/img/homepage/home.webp"
+import home2 from "@/assets/img/homepage/home2.webp"
+import home3 from "@/assets/img/homepage/home3.webp"
+import type { Metadata } from "next"
+import data from "@/data"
+import Title from "@/components/UiElements/Title"
+import dynamic from "next/dynamic"
+
+const Slider = dynamic(() => import("@/components/UiElements/Slider"), { ssr: false })
+const GridImages = dynamic(() => import("@/components/UiElements/GridImages"), { ssr: false })
+
+export const metadata: Metadata = {
+  title: ("Welcome to " + data.name) as string,
+}
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Hero />
+      <Section className={`bg-white relative`} svgClass={`fill-gray-200`}>
+        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-center">
+          <div className={`col-span-12 md:col-span-5 `}>
+            <Tilt className={`w-full bg-gray-200 rounded aspect-4/5`}>
+              <Slider
+                images={[
+                  {
+                    image: home,
+                    alt: "wooden home at twilight",
+                    size: {
+                      width: 400,
+                      height: 500,
+                    },
+                  },
+                  {
+                    image: home2,
+                    alt: "wooden home with steps",
+                    size: {
+                      width: 400,
+                      height: 500,
+                    },
+                  },
+                  {
+                    image: home3,
+                    alt: "alt",
+                    size: {
+                      width: 400,
+                      height: 500,
+                    },
+                  },
+                ]}
+              />
+            </Tilt>
+          </div>
+
+          <div className={`col-span-12 md:col-span-7`}>
+            <Title className={`text-shadow text-shadow-x-3 text-shadow-y-3 text-shadow-black text-shadow-blur-2`}>Custom Made Timber</Title>
+            <Title type={`h6`} className={`font-light text-3xl text-primary-500 italic`}>
+              by Coenie Marais
+            </Title>
+
+            <p className={`leading-loose my-6 text-lg`}>
+              Specializing in both interior and exterior joinery work across South Africa, Custom Made Timber, led by Coenie Marais, caters to projects of any size. Our renowned
+              craftsmanship has garnered a loyal customer base, offering tailored solutions to meet the unique needs of every project, regardless of its scale.
+            </p>
+            <Button href={`/gallery`}>View Gallery</Button>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </Section>
+      <Section className={`bg-gray-200 relative`} svgClass={`fill-white`}>
+        <div className="grid md:grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-center justify-center min-h-[600px]">
+          <Tilt className={`col-span-6 bg-black rounded aspect-square`}>
+            <GridImages
+              images={[
+                {
+                  thumbnail: "/img/corporate/thumbnail/01.webp",
+                  image: "/img/corporate/01.webp",
+                  alt: "corporate image set 1 of 9",
+                },
+                {
+                  thumbnail: "/img/corporate/thumbnail/02.webp",
+                  image: "/img/corporate/02.webp",
+                  alt: "corporate image set 2 of 9 ",
+                },
+                {
+                  thumbnail: "/img/corporate/thumbnail/03.webp",
+                  image: "/img/corporate/03.webp",
+                  alt: "corporate image set 3 of 9",
+                },
+                {
+                  thumbnail: "/img/corporate/thumbnail/04.webp",
+                  image: "/img/corporate/04.webp",
+                  alt: "corporate image set 4 of 9",
+                },
+                {
+                  thumbnail: "/img/corporate/thumbnail/05.webp",
+                  image: "/img/corporate/05.webp",
+                  alt: "corporate image set 5 of 9",
+                },
+                {
+                  thumbnail: "/img/corporate/thumbnail/06.webp",
+                  image: "/img/corporate/06.webp",
+                  alt: "corporate image set 6 of 9",
+                },
+                {
+                  thumbnail: "/img/corporate/thumbnail/07.webp",
+                  image: "/img/corporate/07.webp",
+                  alt: "corporate image set 7 of 9",
+                },
+                {
+                  thumbnail: "/img/corporate/thumbnail/08.webp",
+                  image: "/img/corporate/08.webp",
+                  alt: "corporate image set 8 of 9",
+                },
+                {
+                  thumbnail: "/img/corporate/thumbnail/09.webp",
+                  image: "/img/corporate/09.webp",
+                  alt: "corporate image set 9 of 9",
+                },
+              ]}
+            />
+          </Tilt>
+          <div className={`col-span-6`}>
+            <Title type={`h2`}>Corporate Projects</Title>
+            <Title type={`h6`} className={`font-light text-3xl text-primary-500 italic`}>
+              for business owners
+            </Title>
+            <p className={`leading-loose my-6 text-lg`}>
+              From intricate interior fixtures to durable exterior installations, we offer expert craftsmanship tailored to the unique needs of corporate spaces.
+            </p>
+            <p className={`leading-loose my-6 text-lg`}>
+              With a focus on superior quality and personalized service, we transform visions into stunning timber creations that reflect professionalism, durability, and timeless
+              elegance.
+            </p>
+            <Button href={`/gallery`}>View Gallery</Button>
+          </div>
+        </div>
+      </Section>
+      <Section className={`bg-white relative`} svgClass={`fill-gray-100`}>
+        <div className="grid md:grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-center justify-center min-h-[600px]">
+          <Tilt className={`col-span-6 bg-black rounded aspect-square`}>
+            <GridImages
+              images={[
+                {
+                  thumbnail: "/img/residential/thumbnail/01.webp",
+                  image: "/img/residential/01.webp",
+                  alt: "residential image set 1 of 9",
+                },
+                {
+                  thumbnail: "/img/residential/thumbnail/02.webp",
+                  image: "/img/residential/02.webp",
+                  alt: "residential image set 2 of 9 ",
+                },
+                {
+                  thumbnail: "/img/residential/thumbnail/03.webp",
+                  image: "/img/residential/03.webp",
+                  alt: "residential image set 3 of 9",
+                },
+                {
+                  thumbnail: "/img/residential/thumbnail/04.webp",
+                  image: "/img/residential/04.webp",
+                  alt: "residential image set 4 of 9",
+                },
+                {
+                  thumbnail: "/img/residential/thumbnail/05.webp",
+                  image: "/img/residential/05.webp",
+                  alt: "residential image set 5 of 9",
+                },
+                {
+                  thumbnail: "/img/residential/thumbnail/06.webp",
+                  image: "/img/residential/06.webp",
+                  alt: "residential image set 6 of 9",
+                },
+                {
+                  thumbnail: "/img/residential/thumbnail/07.webp",
+                  image: "/img/residential/07.webp",
+                  alt: "residential image set 7 of 9",
+                },
+                {
+                  thumbnail: "/img/residential/thumbnail/08.webp",
+                  image: "/img/residential/08.webp",
+                  alt: "residential image set 8 of 9",
+                },
+                {
+                  thumbnail: "/img/residential/thumbnail/09.webp",
+                  image: "/img/residential/09.webp",
+                  alt: "residential image set 9 of 9",
+                },
+              ]}
+            />
+          </Tilt>
+          <div className={`col-span-6`}>
+            <Title type={`h2`}>Residential Projects</Title>
+            <Title type={`h6`} className={`font-light text-3xl text-primary-500 italic`}>
+              for home owners
+            </Title>
+            <p className={`leading-loose my-6 text-lg`}>
+              Our tailored timber solutions cater to the individual tastes and needs of homeowners, crafting exquisite interior and exterior features that transform living spaces
+              into personalized havens.
+            </p>
+            <p className={`leading-loose my-6 text-lg`}>
+              From custom-built furniture to intricate cabinetry, doors, windows, and outdoor structures, we blend expertise with creativity to bring your vision to life.
+            </p>
+            <Button href={`/gallery`}>View Gallery</Button>
+          </div>
+        </div>
+      </Section>
+    </>
   )
 }

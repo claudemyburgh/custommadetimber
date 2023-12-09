@@ -1,0 +1,21 @@
+.svg
+  width: 100%
+  &  svg
+    width: 100% !important
+.panel
+  position: relative
+  overflow: hidden
+  &:hover
+    & .animation
+      transform: translateY(0)
+
+
+.animation
+  transform: translateY(-100%)
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: var(--white-color)
+  transition: transform 0.3s ease

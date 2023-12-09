@@ -1,0 +1,41 @@
+.section
+  position: relative
+
+.act-1
+  order: 2
+  @media screen and (max-width: 800px)
+    order: 1
+.act-2
+  order: 1
+  @media screen and (max-width: 800px)
+    order: 2
+
+.section
+  padding-top: 90px
+  padding-bottom: 0
+
+.svg
+  position: absolute
+  top: -1px
+  left: 0
+  width: 100%
+  z-index: 0
+
+.svg2
+  position: absolute
+  bottom: 2px
+  left: 0
+  width: 100%
+  transform: translateY(100%)
+  z-index: 0
+
+.image__wrapper
+  position: relative
+  z-index: 2
+  overflow: hidden
+  box-shadow: rgba(0,0,0,0.5) 30px 10px 40px
+
+  img
+    display: block
+    width: 100%
+

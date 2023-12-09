@@ -2,26 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+    :root {
+        --scrollbar-track-color: theme('colors.gray.500');
+        --scrollbar-thumb-color: theme('colors.primary.500');
+        --scrollbar-thumb-border-width: 1px;
+        --scrollbar-thumb-border-color: theme('colors.primary.700');
+        ---scrollbar-width: 0.75rem;
+        ---scrollbar-height: 0.5rem;
+        --selection-background: theme('colors.primary.100');
+        --selection-color: theme('colors.primary.600');
+    }
+
+
+    /* Firefox */
+    * {
+        scrollbar-width: auto;
+        scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+    }
+
+    /* Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: var(---scrollbar-width);
+        height: var(---scrollbar-height);
+    }
+
+    *::-webkit-scrollbar-track {
+        background: var(--scrollbar-track-color);
+        border-radius: 0;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb-color);
+        border-radius: 0.75rem;
+        border: var(--scrollbar-thumb-border-width) solid var(--scrollbar-thumb-border-color);
+    }
+
+    *::selection {
+        background: var(--selection-background);
+        color: var(--selection-color)
+    }
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@layer components {
+    .wrapper {
+        @apply w-full max-w-6xl px-4 md:px-6 lg:px-8 mx-auto;
+    }
+
+    .link {
+        @apply text-primary-500 hover:underline;
+    }
+
+
+    .flickity {
+        @apply relative;
+    }
+
+    .flickity-button,
+    .flickity-button:hover {
+        @apply bg-transparent hidden;
+    }
+
+
+    .flickity-button-icon {
+        @apply fill-black/50;
+    }
+
+
+    .flickity-page-dots {
+        @apply -translate-y-12;
+    }
+
+    button.flickity-page-dot {
+        @apply w-12 h-2 rounded bg-primary-500/50;
+    }
+
+    button.flickity-page-dot.is-selected {
+        @apply bg-primary-500;
+    }
+
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer utilities {
+    .perspective-800 {
+        perspective: 800px;
+    }
+
+    .preserve {
+        transform-style: preserve-3d;
+    }
+
 }

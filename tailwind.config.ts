@@ -1,20 +1,31 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss"
+import colors from "tailwindcss/colors"
 
 const config: Config = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  safelist: [".flickity", ".flickity-button", ".flickity-button-icon", ".flickity-page-dots", ".flickity-page-dot"],
+  content: ["./pages/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}", "./app/**/*.{js,ts,jsx,tsx,mdx}"],
+  corePlugins: {},
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      aspectRatio: {
+        "4/5": "4 / 5",
+      },
+      colors: {
+        primary: colors.teal,
+      },
+      fontFamily: {
+        sans: "var(--font-body)",
+        heading: "var(--font-heading)",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@designbycode/tailwindcss-text-shadow")({
+      shadowColor: "rgba(0, 0, 0, 0.5)",
+      shadowBlur: "3px",
+      shadowOffsetX: "2px",
+      shadowOffsetY: "2px",
+    }),
+  ],
 }
 export default config
