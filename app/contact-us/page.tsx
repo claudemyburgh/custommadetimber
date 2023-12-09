@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ContactUs() {
   return (
     <Section className={`py-32 `} svgClass={`fill-gray-100`}>
-      <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-center justify-center">
+      <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 justify-center">
         <div className="col-span-8">
           <Title type={"h1"} className={`text-4xl`}>
             Lets talk business
