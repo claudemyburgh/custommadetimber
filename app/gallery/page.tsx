@@ -4,6 +4,7 @@ import data from "@/data"
 import Section from "@/components/Sections/Section"
 import Title from "@/components/UiElements/Title"
 import instagram from "@/assets/img/instagram.png"
+import ImageCollection from "@/components/Sections/ImageCollection"
 
 export const metadata: Metadata = {
   title: ("Gallery for " + data.name) as string,
@@ -23,8 +24,9 @@ export default function Gallery() {
           Instagram
         </a>
       </Title>
-      <div className="grid grid-cols-4 gap-4">
-        <p className={`text-xl mt-4`}>Gallery coming soon </p>
+      <div className="w-full">
+        {/*<p className={`text-xl mt-4`}>Gallery coming soon </p>*/}
+        <ImageCollection />
         {/*{images.map((image: any, index: number) => (*/}
         {/*  <div key={index} className={`bg-gray-100 aspect-square`}>*/}
         {/*    <Image src={`/../images/${image}`} layout="responsive" width={120} height={120} alt="Instagram images" />*/}
