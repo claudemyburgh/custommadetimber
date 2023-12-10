@@ -23,17 +23,12 @@ const images = importAll(require.context("@/app/images/", false, /\.(png|jpe?g|s
 
 const SingleImage = ({ image }: any) => {
   return (
-    <a href={image.default.src} className="aspect-square">
-      <Tilt className="w-full p-2 shadow-black/30 shadow-xl bg-gray-100">
-        <Image
-          className={`object-fill aspect-square`}
-          blurDataURL={image.default.blurDataURL}
-          src={image.default.src}
-          layout="responsive"
-          width={120}
-          height={120}
-          alt="Instagram images"
-        />
+    <a href={image.default.src} className="aspect-square ">
+      <Tilt className="w-full p-2 shadow-black/30 shadow-xl relative isolate">
+        <>
+          <Image className={`object-fill aspect-square`} blurDataURL={image.default.blurDataURL} src={image.default.src} width={250} height={250} alt="Instagram images" />
+          <span aria-hidden={true} className="absolute inset-2 animate-pulse -z-10 aspect-square bg-primary-100"></span>
+        </>
       </Tilt>
     </a>
   )
