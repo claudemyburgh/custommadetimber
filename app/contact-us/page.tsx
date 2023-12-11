@@ -15,7 +15,7 @@ export default function ContactUs() {
   return (
     <Section className={`py-32 `} svgClass={`fill-gray-100`}>
       <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 justify-center">
-        <div className="col-span-8">
+        <div className="col-span-12 md:col-span-8">
           <Title type={"h1"} className={`text-4xl`}>
             Lets talk business
           </Title>
@@ -38,7 +38,7 @@ export default function ContactUs() {
             </li>
           </ul>
         </div>
-        <div className={`col-span-4`}>
+        <div className={`col-span-12 md:col-span-4`}>
           <Tilt>
             <div className={`image__wrapper`}>
               <Image className={`rounded shadow-2xl shadow-black/50`} width={500} height={680} layout="responsive" src={business} alt="about page images" />

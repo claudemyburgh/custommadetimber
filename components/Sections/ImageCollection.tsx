@@ -49,7 +49,7 @@ const ImageCollection = () => {
   }, [])
 
   return (
-    <div ref={targetRef} className={`grid grid-cols-4 gap-4 md:gap-6 lg:gap-8 my-4`}>
+    <div ref={targetRef} className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 my-4`}>
       {images && images.map((image: any, index: number) => <SingleImage key={index} image={image} />)}
     </div>
   )

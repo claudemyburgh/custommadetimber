@@ -46,7 +46,7 @@ const Footer = () => {
 
             <div>
               <h5 className={`text-semibold text-lg`}>Social Pages</h5>
-              <div className="flex space-x-2 mt-2">
+              <div className="mt-2 flex items-center gap-4">
                 <a
                   href={data.social.facebook}
                   rel="noreferrer"

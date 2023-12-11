@@ -8,7 +8,7 @@ const AnimatedLogo: any = dynamic(() => import("@/components/UiElements/Animated
 const Hero = () => {
   return (
     <>
-      <header className={`relative bg-gray-100 py-24 md:py-32 flex items-center justify-center`}>
+      <header className={`relative bg-gray-100 py-24 md:py-32 flex items-center justify-center max-w-full overflow-x-clip`}>
         <div className="wrapper grid grid-cols-12 gap-4 md:gap-6 lg:gap-8">
           <div className="col-span-12 md:col-span-5 flex justify-center items-center">
             <Tilt

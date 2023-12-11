@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`scroll-smooth`}>
-      <body className={twMerge(`${BodyFont.variable} font-sans`, "overflow-x-clip accent-primary-500")}>
+      <body className={twMerge(`${BodyFont.variable} font-sans`, "overflow-x-clip max-w-full accent-primary-500")}>
         <Navbar />
         {children}
         <SocialSection />

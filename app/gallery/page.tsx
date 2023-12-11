@@ -25,13 +25,7 @@ export default function Gallery() {
         </a>
       </Title>
       <div className="w-full">
-        {/*<p className={`text-xl mt-4`}>Gallery coming soon </p>*/}
         <ImageCollection />
-        {/*{images.map((image: any, index: number) => (*/}
-        {/*  <div key={index} className={`bg-gray-100 aspect-square`}>*/}
-        {/*    <Image src={`/../images/${image}`} layout="responsive" width={120} height={120} alt="Instagram images" />*/}
-        {/*  </div>*/}
-        {/*))}*/}
       </div>
     </Section>
   )
