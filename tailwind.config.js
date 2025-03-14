@@ -1,12 +1,53 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 export default {
-  content: [
-    "./resources/**/*.blade.php",
-    "./resources/**/*.js",
-
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+    content: ["./resources/**/*.blade.php", "./resources/**/*.js"],
+    theme: {
+        extend: {
+            colors: {
+                primary: {
+                    DEFAULT: "#F54703",
+                    50: "#FEC7B2",
+                    100: "#FEB89D",
+                    200: "#FD9B75",
+                    300: "#FD7E4D",
+                    400: "#FC6124",
+                    500: "#F54703",
+                    600: "#BE3702",
+                    700: "#862702",
+                    800: "#4F1701",
+                    900: "#170700",
+                    950: "#000000",
+                },
+                secondary: {
+                    DEFAULT: "#FF7518",
+                    50: "#FFE3D0",
+                    100: "#FFD6BB",
+                    200: "#FFBE92",
+                    300: "#FFA66A",
+                    400: "#FF8D41",
+                    500: "#FF7518",
+                    600: "#DF5A00",
+                    700: "#A74300",
+                    800: "#6F2D00",
+                    900: "#371600",
+                    950: "#1B0B00",
+                },
+                gray: {
+                    DEFAULT: "#1B1B1B",
+                    50: "#C8C8C8",
+                    100: "#BEBEBE",
+                    200: "#AAAAAA",
+                    300: "#959595",
+                    400: "#818181",
+                    500: "#6D6D6D",
+                    600: "#585858",
+                    700: "#444444",
+                    800: "#2F2F2F",
+                    900: "#1B1B1B",
+                    950: "#0D0D0D",
+                },
+            },
+        },
+    },
+    plugins: [],
 }

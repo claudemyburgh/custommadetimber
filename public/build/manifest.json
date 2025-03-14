@@ -1,8 +1,24 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-Cq-JqNxA.css",
+    "file": "assets/app-BxlRdAdF.css",
     "src": "resources/css/app.css",
     "isEntry": true
+  },
+  "resources/img/logo-sm.svg": {
+    "file": "assets/logo-sm-Dac40aVV.svg",
+    "src": "resources/img/logo-sm.svg"
+  },
+  "resources/img/logo-sm@2x.webp": {
+    "file": "assets/logo-sm@2x-DbRmtbhI.webp",
+    "src": "resources/img/logo-sm@2x.webp"
+  },
+  "resources/img/logo.svg": {
+    "file": "assets/logo-DIS7Q6ro.svg",
+    "src": "resources/img/logo.svg"
+  },
+  "resources/img/logo.webp": {
+    "file": "assets/logo-0kmT_J1W.webp",
+    "src": "resources/img/logo.webp"
   },
   "resources/js/app.js": {
     "file": "assets/app-DspuE8pW.js",
