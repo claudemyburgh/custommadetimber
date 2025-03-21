@@ -13,22 +13,27 @@
             [
                 'name' => 'Home',
                 'route' => 'home',
+                'active' => '/'
             ],
             [
                 'name' => 'Catalog',
                 'route' => 'catalogs.index',
+                'active' => 'catalog*'
             ],
             [
                 'name' => 'Latest Projects',
                 'route' => 'projects.index',
+                'active' => 'latest-projects*'
             ],
             [
                 'name' => 'Gallery',
-                'route' => 'gallery.index',
+                'route' => 'galleries.index',
+                'active' => 'galler*'
             ],
             [
                 'name' => 'Contact Us',
                 'route' => 'contact-us',
+                'active' => 'contact-us'
             ],
         ];
     }

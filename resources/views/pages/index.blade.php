@@ -2,8 +2,9 @@
     <x-slot:seo>
         <x-meta-tags :$meta/>
     </x-slot:seo>
+
     <x-hero.2/>
-    <x-ui.button variant="outline">Get Started</x-ui.button>
+
     <div class="wrapper py-20">
         <div class="flex -space-x-32">
             @foreach(range(1,10) as $item)

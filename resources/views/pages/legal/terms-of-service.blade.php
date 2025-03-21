@@ -2,6 +2,11 @@
     <x-slot:seo>
         <x-meta-tags :$meta/>
     </x-slot:seo>
+
+    <x-slot:breadcrumbs>
+        {{ Breadcrumbs::render('terms-of-service') }}
+    </x-slot:breadcrumbs>
+
     <div class="max-w-2xl mx-auto my-20 prose">
         @markdown
         # Terms of Service

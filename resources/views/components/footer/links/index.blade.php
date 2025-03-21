@@ -37,19 +37,19 @@
             <a wire:navigate.hover href="{{ route('privacy-policy') }}"
                 @class([
                      'text-sm text-gray-400 hover:text-white transition-colors',
-                     'font-medium text-primary-500' => request()->routeIs('privacy-policy'),
+                     'font-medium text-primary-500' => request()->is('privacy-policy'),
              ])>
                 Privacy Policy
             </a>
             <a wire:navigate.hover href="{{ route('terms-of-service') }}" @class([
                     'text-sm text-gray-400 hover:text-white transition-colors',
-                    'font-medium text-primary-500' => request()->routeIs('terms-of-service'),
+                    'font-medium text-primary-500' => request()->is('terms-of-service'),
             ])>
                 Terms of Service
             </a>
             <a wire:navigate.hover href="{{ route('cookie-policy') }}" @class([
                     'text-sm text-gray-400 hover:text-white transition-colors',
-                    'font-medium text-primary-500' => request()->routeIs('cookie-policy'),
+                    'font-medium text-primary-500' => request()->is('cookie-policy'),
             ])>
                 Cookie Policy
             </a>

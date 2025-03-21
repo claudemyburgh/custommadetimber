@@ -47,6 +47,12 @@
     <!-- End Google Tag Manager (noscript) -->
 @endproduction
 <x-navigation/>
+
+<div class="wrapper mt-14">
+    {{ $breadcrumbs ?? null }}
+</div>
+
+
 <main id="main">
     {{ $slot }}
 </main>

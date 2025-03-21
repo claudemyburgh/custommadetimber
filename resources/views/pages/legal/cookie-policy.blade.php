@@ -2,6 +2,11 @@
     <x-slot:seo>
         <x-meta-tags :$meta/>
     </x-slot:seo>
+    <x-slot:breadcrumbs>
+        {{ Breadcrumbs::render('cookie-policy') }}
+    </x-slot:breadcrumbs>
+
+
     <div class="max-w-2xl mx-auto my-20 prose">
         @markdown
         # Cookie Policy

@@ -6,7 +6,7 @@
             @foreach($menu as $link)
                 <a wire:navigate.hover @class([
                     'hover:text-primary-500',
-                    'font-medium text-primary-500' => request()->routeIs($link->route),
+                    'font-medium text-primary-500' => request()->is($link->active),
                 ])
                 href="{{ route($link->route) }}">{{ $link->name }}</a>
             @endforeach
