@@ -1,10 +1,41 @@
-<header class="min-h-screen  text-white flex items-center justify-center">
-    <section class="wrapper grid place-items-center">
+@php
+    $slides = collect([
+        [
+            'title' => 'Residential Projects',
+            'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consectetur cupiditate delectus deleniti deserunt, doloribus eligendi labore maxime
+            molestiae necessitatibus, odit quasi quibusdam sapiente sed sequi suscipit temporibus totam velit.',
+            'image' => 'resources/img/residential/06.webp',
+        ],
+        [
+            'title' => 'Commercial Projects',
+            'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consectetur cupiditate delectus deleniti deserunt, doloribus eligendi labore maxime
+            molestiae necessitatibus, odit quasi quibusdam sapiente sed sequi suscipit temporibus totam velit.',
+            'image' => 'resources/img/residential/05.webp',
+        ],
+        [
+            'title' => 'Storefront Projects',
+            'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consectetur cupiditate delectus deleniti deserunt, doloribus eligendi labore maxime
+            molestiae necessitatibus, odit quasi quibusdam sapiente sed sequi suscipit temporibus totam velit.',
+            'image' => 'resources/img/residential/01.webp',
+        ],
+    ]);
 
-        <img class="size-[200px] md:size-[360px]" src="{{ Vite::asset('resources/img/logo.svg') }}" alt="">
-        <h1 class="text-3xl text-secondary-300 md:text-5xl font-bold text-center">
-            Website Under Construction
-        </h1>
+@endphp
 
-    </section>
+<header class="relative w-full min-h-screen bg-gray-300 overflow-clip">
+    <x-hero.slider>
+        @foreach($slides as $slide)
+            <x-hero.slider.slide :image="$slide['image']" :title="$slide['title']" :text="$slide['text']"/>
+        @endforeach
+
+
+    </x-hero.slider>
+
+    <x-hero.thumbnail>
+        @foreach($slides as $slide)
+            <x-hero.thumbnail.slide :image="$slide['image']"/>
+        @endforeach
+    </x-hero.thumbnail>
+
+
 </header>

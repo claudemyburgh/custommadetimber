@@ -1,8 +1,17 @@
+import preset from "./vendor/filament/support/tailwind.config.preset"
+import colors from "tailwindcss/colors"
+
 /** @type {import("tailwindcss").Config} */
 export default {
-    content: ["./resources/**/*.blade.php", "./resources/**/*.js"],
+    presets: [preset],
+    darkMode: "class",
+    content: ["./resources/**/*.blade.php", "./resources/**/*.ts", "./app/Filament/**/*.php", "./resources/views/filament/**/*.blade.php", "./vendor/filament/**/*.blade.php"],
+    safelist: [".splide__arrow--prev", "splide__arrow--next"],
     theme: {
         extend: {
+            borderRadius: {
+                default: "0.5rem",
+            },
             colors: {
                 primary: {
                     DEFAULT: "#F54703",
@@ -18,20 +27,7 @@ export default {
                     900: "#170700",
                     950: "#000000",
                 },
-                secondary: {
-                    DEFAULT: "#FF7518",
-                    50: "#FFE3D0",
-                    100: "#FFD6BB",
-                    200: "#FFBE92",
-                    300: "#FFA66A",
-                    400: "#FF8D41",
-                    500: "#FF7518",
-                    600: "#DF5A00",
-                    700: "#A74300",
-                    800: "#6F2D00",
-                    900: "#371600",
-                    950: "#1B0B00",
-                },
+                secondary: colors.neutral,
                 gray: {
                     DEFAULT: "#1B1B1B",
                     50: "#C8C8C8",
@@ -49,5 +45,5 @@ export default {
             },
         },
     },
-    plugins: [],
+    plugins: [require("@designbycode/tailwindcss-text-shadow"), require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 }

@@ -1,5 +1,16 @@
-<nav class="bg-gray-900 flex items-center text-gray-300 min-h-14 shadow-md shadow-primary-500/10 border-b border-primary-500">
+<nav class=" bg-gray-950 fixed top-0 inset-x-0 z-40 flex items-center text-gray-300 min-h-14">
     <div class="wrapper flex items-center justify-between ">
-        <a class="text-2xl tracking-tighter text-white" href="{{ route('home') }}">{{ config('app.name') }}</a>
+        <x-navigation.brand/>
+
+        <div class="hidden md:flex space-x-6">
+            @foreach($menu as $link)
+                <a wire:navigate.hover @class([
+                    'hover:text-primary-500',
+                    'font-medium text-primary-500' => request()->routeIs($link->route),
+                ])
+                href="{{ route($link->route) }}">{{ $link->name }}</a>
+            @endforeach
+
+        </div>
     </div>
 </nav>

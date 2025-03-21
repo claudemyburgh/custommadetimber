@@ -17,7 +17,7 @@
  *
  * - `module`: Defines the module system to be used (e.g., CommonJS, ES Modules).
  *   This affects how modules are imported and exported in the generated code.
- *   ES Modules are the modern standard, while CommonJS is commonly used in Node.js
+ *   ES Modules are the modern standard, while CommonJS is commonly used in Node.ts
  *   environments.
  *
  * - `moduleResolution`: Specifies the module resolution strategy (e.g., 'node',
