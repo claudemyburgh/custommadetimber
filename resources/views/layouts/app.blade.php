@@ -24,7 +24,7 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700,800,900" rel="stylesheet"/>
+    <link href="https://fonts.bunny.net/css?family=albert-sans:100,200,200i,300,300i,400,500,600,700,800,900" rel="stylesheet"/>
 
     <style>
         [x-cloak] {
@@ -37,7 +37,7 @@
     @livewireStyles
     @filamentStyles
 </head>
-<body class="font-sans bg-white text-gray-900 antialiased h-full">
+<body class="font-sans bg-white text-gray-900 antialiased h-full selection:bg-primary-200 selection:text-primary-700">
 @production
     <!-- Google Tag Manager (noscript) -->
     <noscript>

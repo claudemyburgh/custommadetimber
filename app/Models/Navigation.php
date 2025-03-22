@@ -15,11 +15,11 @@
                 'route' => 'home',
                 'active' => '/'
             ],
-            [
-                'name' => 'Catalog',
-                'route' => 'catalogs.index',
-                'active' => 'catalog*'
-            ],
+//            [
+//                'name' => 'Catalog',
+//                'route' => 'catalogs.index',
+//                'active' => 'catalog*'
+//            ],
             [
                 'name' => 'Latest Projects',
                 'route' => 'projects.index',

@@ -1,6 +1,7 @@
 <?php
 
     use App\Models\Gallery;
+    use App\Models\Project;
     use Diglactic\Breadcrumbs\Breadcrumbs;
     use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 
@@ -26,6 +27,11 @@
     Breadcrumbs::for('projects', function (BreadcrumbTrail $trail) {
         $trail->parent('home');
         $trail->push('Latest Projects', route('projects.index'));
+    });
+
+    Breadcrumbs::for('project', function (BreadcrumbTrail $trail, Project $project) {
+        $trail->parent('projects');
+        $trail->push('Latest Projects', route('projects.index', $project));
     });
 
     Breadcrumbs::for('catalog', function (BreadcrumbTrail $trail) {

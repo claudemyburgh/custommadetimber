@@ -6,17 +6,16 @@
     <x-slot:breadcrumbs>
         {{ Breadcrumbs::render('galleries') }}
     </x-slot:breadcrumbs>
-    <div class="wrapper py-20">
-        <h1 class="text-3xl font-bold mb-6">Gallery Index</h1>
-        <div class="space-y-2">
-            @foreach($galleries as $gallery)
-                <div>
-                    <a wire:navigate.hover href="{{ route('galleries.show', $gallery) }}" class="hover:underline">
-                        {{ $gallery->title }}
-                    </a>
-                </div>
-            @endforeach
+
+    <x-sections.top-of-page>
+        <h1 class="text-3xl font-bold mb-6">Gallery</h1>
+        <div class="max-w-2xl">
+            <x-timeline.1 :data="$galleries" route="galleries.show">
+
+            </x-timeline.1>
         </div>
-    </div>
+    </x-sections.top-of-page>
+
+
 </x-app-layout>
 

@@ -27,15 +27,17 @@
                         ->panelLayout('grid')
                         ->reorderable()
                         ->multiple()
+                        ->columnSpanFull()
                         ->collection('gallery'),
 
                     Forms\Components\TextInput::make('title')
                         ->required()
+                        ->columnSpanFull()
                         ->maxLength(191),
 
                     Forms\Components\Textarea::make('description')
                         ->autosize()
-                        ->rows(8)
+                        ->rows(4)
                         ->cols(80)
                         ->columnSpanFull(),
                 ]);

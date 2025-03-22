@@ -1,5 +1,6 @@
 import preset from "./vendor/filament/support/tailwind.config.preset"
 import colors from "tailwindcss/colors"
+import defaultTheme from "tailwindcss/defaultTheme"
 
 /** @type {import("tailwindcss").Config} */
 export default {
@@ -9,6 +10,9 @@ export default {
     safelist: [".splide__arrow--prev", "splide__arrow--next"],
     theme: {
         extend: {
+            fontFamily: {
+                sans: ['"Albert Sans"', ...defaultTheme.fontFamily.serif],
+            },
             borderRadius: {
                 default: "0.5rem",
             },

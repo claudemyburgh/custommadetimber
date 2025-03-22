@@ -5,11 +5,15 @@
     <x-slot:breadcrumbs>
         {{ Breadcrumbs::render('gallery', $gallery) }}
     </x-slot:breadcrumbs>
-    <div class="wrapper py-20">
+
+    <x-sections.top-of-page>
         <h1 class="text-3xl font-bold mb-6">{{ $gallery->title }}</h1>
-        <div>
-            {{ $gallery->description }}
+        <div class="prose">
+            @markdown($gallery->description)
         </div>
-    </div>
+
+    </x-sections.top-of-page>
+
+
 </x-app-layout>
 

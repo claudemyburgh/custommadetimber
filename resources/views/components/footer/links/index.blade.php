@@ -15,20 +15,16 @@
     </div>
 
     <div class="space-y-3">
-        <h3 class="text-sm font-medium uppercase tracking-wider text-white">Support</h3>
+        <h3 class="text-sm font-medium uppercase tracking-wider text-white">Social Media</h3>
         <nav class="flex flex-col space-y-2">
-            <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">
-                Help Center
-            </a>
-            <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">
-                Contact Us
-            </a>
-            <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">
-                Community
-            </a>
-            <a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">
-                Status
-            </a>
+            @foreach(config('social') as $social)
+                <a target="_blank" href="{{ $social['url'] }}" class="text-sm text-gray-400 flex items-center space-x-2 hover:text-white transition-colors">
+                    <span class="text-whie">
+                        {!! $social['icon'] !!}
+                    </span>
+                    <span>{{ $social['name'] }}</span>
+                </a>
+            @endforeach
         </nav>
     </div>
     <div class="space-y-3">
@@ -56,21 +52,21 @@
 
         </nav>
     </div>
-    <div class="space-y-3">
+    <div class="space-y-3 col-span-2 md:col-span-1">
         <h3 class="text-sm font-medium uppercase tracking-wider text-white">Contact</h3>
         <div class="space-y-2">
-            <div class="flex items-start space-x-2">
-                <x-heroicon-s-map-pin class="h-5 w-5 text-gray-400 mt-0.5"/>
-                <span class="text-sm text-gray-400">{{ config('contact.address') }}</span>
-            </div>
-            <div class="flex items-start space-x-2">
-                <x-heroicon-s-phone class="h-4 w-4 text-gray-400 mt-0"/>
-                <span class="text-sm text-gray-400">{{ config('contact.phone')  }}</span>
-            </div>
-            <div class="flex items-start space-x-2">
-                <x-heroicon-s-envelope class="h-5 w-5 text-gray-400 mt-0.5"/>
-                <span class="text-sm text-gray-400">{{ config('contact.email')  }}</span>
-            </div>
+            <a target="_blank" href="{{ config('social.google.url') }}" class="flex items-start space-x-2">
+                <x-heroicon-s-map-pin class="h-5 w-5 text-gray-400 mt-0.5 shrink-0"/>
+                <span class="text-sm text-gray-400 hover:text-white transition-colors">{{ config('contact.address') }}</span>
+            </a>
+            <a target="_blank" href="tel:{{config('contact.phone_flat')}}" class="flex items-start space-x-2">
+                <x-heroicon-s-phone class="h-4 w-4 text-gray-400 mt-0 shrink-0"/>
+                <span class="text-sm text-gray-400 hover:text-white transition-colors">{{ config('contact.phone')  }}</span>
+            </a>
+            <a target="_blank" href="mailto:{{config('contact.email')}}" class="flex items-start space-x-2">
+                <x-heroicon-s-envelope class="h-5 w-5 text-gray-400 mt-0.5 shrink-0"/>
+                <span class="text-sm text-gray-400 hover:text-white transition-colors">{{ config('contact.email')  }}</span>
+            </a>
         </div>
     </div>
 </div>

@@ -5,12 +5,37 @@
     <x-slot:breadcrumbs>
         {{ Breadcrumbs::render('projects') }}
     </x-slot:breadcrumbs>
-    <div class="wrapper py-20">
-        <h1>Projects</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, eligendi odio. Aliquid culpa doloremque eos, ipsam iure minus saepe? A accusantium, asperiores aspernatur dicta, error esse eveniet expedita id minus odit quia
-            rem! Amet debitis est eum illo neque rerum. Doloremque esse eveniet iusto sit voluptatem. Adipisci aliquid asperiores atque blanditiis consequatur cumque deleniti eius enim eos esse impedit inventore iure laborum molestiae
-            mollitia necessitatibus nihil nisi odit omnis, perferendis provident quaerat quas quia quibusdam quis ratione repellendus sed tempore temporibus ullam ut vero voluptate, voluptatem? At culpa eligendi hic iste modi nostrum omnis
-            pariatur sit tempore, voluptate? Facilis, praesentium!</p>
-    </div>
+
+    <x-sections.top-of-page>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="space-y-4 lg:space-y-6">
+                <h1 class="text-3xl font-bold mb-6">Latest Project</h1>
+                <p>
+                    Our most recent project involved crafting bespoke timber interiors for a high-end residential property. The design featured custom-built cabinetry, elegant wooden wall paneling, and handcrafted furniture, all
+                    meticulously
+                    tailored to complement the home’s modern yet timeless aesthetic.
+                </p>
+                <p>
+                    Using only premium hardwoods and precision craftsmanship, we seamlessly integrated functionality with sophisticated design. From the statement kitchen cabinetry to the intricate detailing in the living spaces, every
+                    element
+                    was
+                    designed to enhance warmth, style, and durability.
+
+                    This project showcases our dedication to quality, attention to detail, and passion for creating exquisite, lasting woodwork. Stay tuned for more of our latest transformations!
+                </p>
+            </div>
+            <div class="space-y-4 lg:space-y-6 aspect-video rounded-default bg-gray-50">
+            </div>
+        </div>
+
+
+        <div class="max-w-2xl mx-auto my-24">
+            <x-timeline.1 :data="$projects" route="projects.show" date="project_date">
+
+            </x-timeline.1>
+        </div>
+    </x-sections.top-of-page>
+
+
 </x-app-layout>
 

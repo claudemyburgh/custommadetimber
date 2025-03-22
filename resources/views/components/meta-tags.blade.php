@@ -12,7 +12,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="{{ config('app.name') }} | {{ $meta['meta_title'] ?? $meta['title'] }}">
 <meta property="og:description" content="{{ $meta['meta_description'] ?? $meta['description'] }}">
-<meta property="og:image" content="{{ $meta['meta_image'] ?? Vite::asset('resources/img/meta/eloquent.jpg')  }}">
+<meta property="og:image" content="{{ $meta['meta_image'] ?? Vite::asset(config('seo-meta.image'))  }}">
 
 {{--  Twitter Meta Tags --}}
 <meta name="twitter:card" content="summary_large_image"/>
@@ -20,4 +20,4 @@
 <meta property="twitter:url" content="{{ URL::current() }}"/>
 <meta name="twitter:title" content="{{ config('app.name') }} | {{ $meta['meta_title']  ?? $meta['title']   ?? '' }}">
 <meta name="twitter:description" content="{{ $meta['meta_description'] ?? $meta['description']   }}">
-<meta name="twitter:image" content="{{ $meta['meta_image'] ?? $meta['image'] ?? Vite::asset('resources/img/meta/eloquent.jpg') }}">
+<meta name="twitter:image" content="{{ $meta['meta_image'] ?? $meta['image'] ?? Vite::asset(config('seo-meta.image')) }}">
