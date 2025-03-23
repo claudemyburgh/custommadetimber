@@ -1,5 +1,5 @@
 <x-mail::message>
-    // @formatter:off
+    @formatter:off
 
 # {{ $subject }}
 
