@@ -1,6 +1,12 @@
 {
+  "node_modules/.pnpm/photoswipe@5.4.4/node_modules/photoswipe/dist/photoswipe.esm.js": {
+    "file": "assets/photoswipe.esm-DXWKOczD.js",
+    "name": "photoswipe.esm",
+    "src": "node_modules/.pnpm/photoswipe@5.4.4/node_modules/photoswipe/dist/photoswipe.esm.js",
+    "isDynamicEntry": true
+  },
   "resources/css/app.css": {
-    "file": "assets/app-DK5lLNae.css",
+    "file": "assets/app-DE71iKzz.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -240,6 +246,10 @@
     "file": "assets/long-logo-BzfxK3cf.svg",
     "src": "resources/img/long-logo.svg"
   },
+  "resources/img/mask.webp": {
+    "file": "assets/mask-BonVzloU.webp",
+    "src": "resources/img/mask.webp"
+  },
   "resources/img/menu-logo.svg": {
     "file": "assets/menu-logo-CDZ9Lmcr.svg",
     "src": "resources/img/menu-logo.svg"
@@ -329,12 +339,15 @@
     "src": "resources/img/white-logo.svg"
   },
   "resources/ts/app.ts": {
-    "file": "assets/app-Doj5HPvD.js",
+    "file": "assets/app-D2fHjh92.js",
     "name": "app",
     "src": "resources/ts/app.ts",
     "isEntry": true,
+    "dynamicImports": [
+      "node_modules/.pnpm/photoswipe@5.4.4/node_modules/photoswipe/dist/photoswipe.esm.js"
+    ],
     "css": [
-      "assets/app-DQ1YEBWH.css"
+      "assets/app-B68olnt5.css"
     ]
   }
 }

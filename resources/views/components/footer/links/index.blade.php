@@ -1,4 +1,4 @@
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4  gap-8 py-8 border-t border-b border-gray-800">
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 relative z-20 gap-8 py-8 border-t border-b border-gray-800">
     <div class="space-y-3">
         <h3 class="text-sm font-medium uppercase tracking-wider text-white">Company</h3>
         <nav class="flex flex-col space-y-2">

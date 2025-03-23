@@ -14,8 +14,14 @@
          */
         public function __invoke(Gallery $gallery): View
         {
+
+
+            $mediaWithSizes = $gallery->getMediaWithDimensions('gallery', ['screen', 'card']);
+
+
             return view('pages.galleries.show', [
                 'gallery' => $gallery,
+                'mediaWithSizes' => $mediaWithSizes,
                 'meta' => [
                     'title' => 'Terms of Service',
                 ]

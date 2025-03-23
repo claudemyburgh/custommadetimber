@@ -24,15 +24,22 @@
                     This project showcases our dedication to quality, attention to detail, and passion for creating exquisite, lasting woodwork. Stay tuned for more of our latest transformations!
                 </p>
             </div>
-            <div class="space-y-4 lg:space-y-6 aspect-video rounded-default bg-gray-50">
+            <div class="space-y-4 lg:space-y-6 relative">
+                <img class="w-full relative -z-10 h-auto m-6 md:absolute md:-top-1/2" loading="lazy" src="{{ Vite::asset('resources/img/aboutpage/work-shop.webp') }}" alt="Work shop"/>
             </div>
         </div>
 
 
         <div class="max-w-2xl mx-auto my-24">
-            <x-timeline.1 :data="$projects" route="projects.show" date="project_date">
+            @if($projects->count())
+                <x-timeline.1 :data="$projects" route="projects.show" date="project_date">
+                </x-timeline.1>
 
-            </x-timeline.1>
+            @else
+                <p class="text-3xl font-bold bg-white/25 backdrop-blur-md -rotate-3 text-center border-[4px] p-4 border-gray-700 rounded-default">
+                    Currently no project listed.
+                </p>
+            @endif
         </div>
     </x-sections.top-of-page>
 
