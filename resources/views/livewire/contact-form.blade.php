@@ -2,7 +2,7 @@
 
     <form class="space-y-4" wire:submit="send">
 
-
+        <x-honeypot livewire-model="extraFields"/>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
                 <x-ui.input-label for="first_name" required="true"/>

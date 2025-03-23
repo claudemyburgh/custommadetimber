@@ -6,10 +6,15 @@
     use Filament\Notifications\Notification;
     use Illuminate\View\View;
     use Livewire\Component;
+    use Spatie\Honeypot\Http\Livewire\Concerns\HoneypotData;
+    use Spatie\Honeypot\Http\Livewire\Concerns\UsesSpamProtection;
 
 
     class ContactForm extends Component
     {
+        use UsesSpamProtection;
+
+        public HoneypotData $extraFields;
 
         public string $first_name = '';
         public string $last_name = '';
@@ -20,6 +25,11 @@
         public string $message = '';
 
         public function __construct(public ?string $subject = '') {}
+
+        public function mount(): void
+        {
+            $this->extraFields = new HoneypotData();
+        }
 
         public function send(): void
         {
