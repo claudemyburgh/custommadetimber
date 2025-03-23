@@ -1,6 +1,6 @@
-@formatter:off
-
 <x-mail::message>
+    // @formatter:off
+
 # {{ $subject }}
 
 {{ $message }}
