@@ -1,5 +1,5 @@
+{{--@formatter:off--}}
 <x-mail::message>
-    @formatter:off
 
 # Hi, {{ $first_name }} {{ $last_name }}
 

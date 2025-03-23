@@ -24,15 +24,13 @@
         public function send(): void
         {
             $data = $this->validate();
-
-            event(new SendEmailEvent($this->validate()));
+            event(new SendEmailEvent($data));
 
 //            $this->triggerSuccess();
             Notification::make()
                 ->title('Send successfully')
                 ->success()
                 ->send();
-
 
             $this->reset();
         }
