@@ -23,10 +23,11 @@
                     </a>
                 </div>
             </div>
-            <div class="mx-auto aspect-video overflow-hidden rounded-xl  sm:w-full lg:aspect-square bg-gray-950 shadow-lg p-8 grid place-items-center">
-                <img class="aspect-square animator size-2/3" src="{{ Vite::asset('resources/img/logo.svg') }}" alt="{{ config('app.name') }} logo">
+            <div class="p-16 2xl:p-4">
+                <div class="mx-auto aspect-video overflow-hidden rounded-xl m-8 sm:w-full lg:aspect-square bg-gray-950 shadow-lg  grid place-items-center">
+                    <img class="aspect-square animator size-2/3" src="{{ Vite::asset('resources/img/logo.svg') }}" alt="{{ config('app.name') }} logo">
+                </div>
             </div>
-
         </div>
     </div>
 </section>
