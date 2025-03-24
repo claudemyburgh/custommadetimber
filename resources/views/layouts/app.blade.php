@@ -48,9 +48,11 @@
 @endproduction
 <x-navigation/>
 
-<div class="wrapper mt-14">
-    {{ $breadcrumbs ?? null }}
-</div>
+@if(!request()->routeIs('home'))
+    <div class="wrapper mt-20">
+        {{ $breadcrumbs ?? null }}
+    </div>
+@endif
 
 
 <main id="main">
