@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-DE71iKzz.css",
+    "file": "assets/app-CIoCcKvF.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -339,7 +339,7 @@
     "src": "resources/img/white-logo.svg"
   },
   "resources/ts/app.ts": {
-    "file": "assets/app-D2fHjh92.js",
+    "file": "assets/app-D9WjXOy2.js",
     "name": "app",
     "src": "resources/ts/app.ts",
     "isEntry": true,
